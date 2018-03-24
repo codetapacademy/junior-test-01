@@ -11,3 +11,15 @@
 .header__styled {
     font-family: 'Berkshire Swash';
 }
+
+.header__icon--trophy,
+.header__icon--plus {
+    font-size: 0.7rem;
+}
+.header__icon--trophy {
+    @extend .jt-trophy;
+}
+
+.header__icon--plus {
+    @extend .jt-plus;
+}

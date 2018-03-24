@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'junior-test-01';
+    src:
+      url('/asset/font/junior-test-01.ttf?7zjbvu') format('truetype'),
+      url('/asset/font/junior-test-01.woff?7zjbvu') format('woff'),
+      url('/asset/font/junior-test-01.svg?7zjbvu#junior-test-01') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="header__icon--"], 
+  [class*=" header__icon--"],
+  [class^="jt-"], 
+  [class*=" jt-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'junior-test-01' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .jt-trophy:before {
+    content: "\e99e";
+  }
+  .jt-plus:before {
+    content: "\ea0a";
+  }
+  
