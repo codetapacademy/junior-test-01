@@ -1,7 +1,24 @@
 .top__wrapper {
+    position: relative;
     height: calc(100vh - #{$header-height});
     // background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-image: url(/asset/image/junior-test-top.jpg);
+    background-image: 
+        url(/asset/image/junior-test-top.jpg);
+        filter: grayscale(50);
+        &:after {
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background-image: 
+                linear-gradient(
+                    to right, 
+                    rgba(26, 44, 84, 0.53),
+                    rgba(97, 150, 158, 0.53)
+                );
+    }
 }
