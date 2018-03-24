@@ -25,7 +25,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+  .jt-mouse:before {
+    content: "\e900";
+  }
   .jt-trophy:before {
     content: "\e99e";
   }
