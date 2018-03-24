@@ -1,6 +1,7 @@
-.leaderboard {
+#leaderboard {
 	position: relative;
 	min-height: 300px;
+	overflow: hidden;
 }
 .leaderboard__footer {
 	font-family: $nice-font;
