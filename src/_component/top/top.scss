@@ -1,0 +1,7 @@
+.top__wrapper {
+    height: calc(100vh - #{$header-height});
+    // background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/asset/image/junior-test-top.jpg);
+}

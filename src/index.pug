@@ -6,14 +6,5 @@ html
       rel="stylesheet"
     )
   body
-    .header
-      ul.header__list
-        li 
-          span.header__icon--trophy
-          span Leaderboard
-        li.header__styled Foosball
-        li
-          span.header__icon--plus
-          span Add score
-
-    img(src="/asset/image/junior-test-top.jpg")
+    include _component/header/header
+    include _component/top/top
