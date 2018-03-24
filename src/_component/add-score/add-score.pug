@@ -1,0 +1,48 @@
+.add-score
+    .add_score__modal
+        .add-score__title Add score
+        -
+            const labelList = ["Winner", "Loser"]
+        form#add-score
+            each labelValueSuperHero, keyCool in labelList
+                .add-score__row
+                    .add-score__label=labelValueSuperHero
+                    input.add-score__name
+                    select.add-score__score
+                    input(
+                        type="radio"
+                        name=`name-${keyCool}`
+                        id=`red-${keyCool}`
+                    )
+                    label.add-score__team-label(for=`red-${keyCool}`) Red
+                    input(
+                        type="radio"
+                        name=`name-${keyCool}`
+                        id=`blue-${keyCool}`
+                    )
+                    label.add-score__team-label(for=`blue-${keyCool}`) Blue
+script.
+    const inputRadioList = [...document.querySelectorAll('input[type="radio"]')]
+    inputRadioList.map((inputRadio, key) => {
+        inputRadio.addEventListener('change', e => {
+            // row clicked, 0 -> first, 1 -> second
+            const rowCliked = Math.floor(key / 2);
+
+            //- is it red or blue?
+            const elementIdIndex = inputRadio.id.split('-')[0];
+            
+            // if we click on red, make the target blue, 
+            // if we click on blue, make the target red
+            const targetFirst = elementIdIndex === 'red' ? 'blue' : 'red';
+
+            // if we click on row with index 0, target must be on row with
+            // index 1, or if we click on row with index 1, target must be 
+            // on row with index 0
+            const targetSecond = rowCliked === 1 ? 0 : 1;
+
+            //- concatenate (join, glue) the targetFirst and targetSecond
+            // values together using a "-" between them
+            const target = `${targetFirst}-${targetSecond}`;
+            document.getElementById(target).checked = true;
+        });
+    })

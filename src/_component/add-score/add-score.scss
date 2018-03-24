@@ -1,0 +1,33 @@
+#add-score {
+    font-size: 3rem;
+}
+.add-score__team-label {
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+input[type="radio"] {
+    display: none;
+    border-radius: 5px;
+    &:checked + .add-score__team-label {
+        border: 5px solid $green-border-color;
+    }
+}
+.add-score {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: lightseagreen;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_score__modal {
+    background-color: $modal-background-color;
+    padding: 1rem;
+}
+.add-score__title {
+    font-size: 6rem;
+}
