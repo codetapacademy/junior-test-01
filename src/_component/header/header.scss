@@ -1,0 +1,13 @@
+.header {
+    // border: 1px solid red;
+    background-color: white;
+}
+.header__list {
+    list-style-type: none;
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-between;
+}
+.header__styled {
+    font-family: 'Berkshire Swash';
+}
