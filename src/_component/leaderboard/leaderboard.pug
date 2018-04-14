@@ -1,4 +1,13 @@
 #leaderboard
     .leaderboard__stand
     .leaderboard__title The leaderboard
+    -
+        const boardList = ['1st', '2nd', '3rd'];
+
+    .board-list
+        each board, key in boardList
+            .boar-list__item
+                .board-list__place=board
+                .name='Name ' + key
+                .score=0
     .leaderboard__footer points
