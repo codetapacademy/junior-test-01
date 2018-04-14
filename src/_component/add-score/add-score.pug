@@ -31,6 +31,7 @@
             .add-score__button-wrapper
                 button.add-score__button Add score
 script.
+    let scoreList = [];
     const inputRadioList = [...document.querySelectorAll('input[type="radio"]')]
     inputRadioList.map((inputRadio, key) => {
         inputRadio.addEventListener('change', e => {
@@ -56,6 +57,42 @@ script.
         });
     })
 
+    const dealWithTheFormValues = () => {
+        const selectValueList = [...document.querySelectorAll('.add-score__score')].map(selectValue => selectValue.value);
+        const nameValueList = [...document.querySelectorAll('.add-score__name')].map(selectValue => selectValue.value);
+        //- console.log(scoreList);
+        //- add to scoreList
+        selectValueList.map((selectValue, key) => {
+            const findIt = scoreList.filter((score, fKey) => {
+                const isItTrue = score.name === nameValueList[key];
+                // update if you find it
+                if (isItTrue) {
+                    scoreList[fKey].value += parseInt(selectValueList[key], 10);
+                    console.log(scoreList[fKey]);
+                }
+                return isItTrue;
+            }).length;
+            console.log(findIt);
+
+            // if none was found
+            if(!findIt) {
+                scoreList.push({
+                    name: nameValueList[key],
+                    value: parseInt(selectValueList[key], 10)
+                })
+            }
+        })
+        console.log(scoreList);
+        console.clear();
+        // populate the leader board
+        scoreList
+            .sort((a, b) => b.value - a.value)
+            .slice(0, 3)
+            .map(score => {
+                console.log(score)
+            })
+    }
+
     // select the hit me button
     const hitMeButton = document.querySelector('.add-score__button');
     hitMeButton.addEventListener('click', e => {
@@ -64,6 +101,7 @@ script.
         //- check if a team has been selected
         if(inputRadioList.filter(inputRadio => inputRadio.checked).length) {
             console.log('it has been selected');
+            dealWithTheFormValues();
         } else {
             alert(`Select a team please`);
         }
