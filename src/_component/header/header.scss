@@ -17,6 +17,9 @@
 }
 .header__item {
     padding: 1rem;
+    & label {
+        cursor: pointer;
+    }
 }
 
 .header__icon--trophy,

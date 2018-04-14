@@ -1,6 +1,10 @@
 #add-score {
     font-size: 3rem;
 }
+label.jt-cancel-circle {
+    float: right;
+    cursor: pointer;
+}
 .add-score__team-label,
 .add-score__score,
 .add-score__name,
@@ -40,6 +44,10 @@
     font-weight: bold;
 }
 
+#modal-input {
+    display: none;
+}
+
 .add-score__name:focus {
     border: 5px solid $cerulean-color;
 
@@ -58,6 +66,7 @@
     text-overflow: '';
     padding: 1rem 1.7rem;
 }
+
 .add-score__wrapper {
     position: relative;
     .jt-circle-down {
@@ -67,6 +76,7 @@
         right: 0.7rem;
     }
 }
+
 input[type="radio"] {
     display: none;
     border-radius: 5px;
@@ -74,6 +84,7 @@ input[type="radio"] {
         border: 5px solid $green-border-color;
     }
 }
+
 .add-score {
     position: fixed;
     top: 0;
@@ -82,14 +93,20 @@ input[type="radio"] {
     right: 0;
     background: lightseagreen;
     z-index: 2;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
+
+#modal-input:checked + .add-score {
+    display: flex;
+}
+
 .add_score__modal {
     background-color: $modal-background-color;
     padding: 1rem;
 }
+
 .add-score__title {
     font-size: 6rem;
 }
