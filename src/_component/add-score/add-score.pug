@@ -7,7 +7,9 @@
             each labelValueSuperHero, keyCool in labelList
                 .add-score__row
                     .add-score__label=labelValueSuperHero
-                    input.add-score__name
+                    span.add-score__name-wrapper
+                        input.add-score__name
+                        .add-score__tiny-label Name
                     span.add-score__wrapper
                         span.jt-circle-down
                         select.add-score__score
@@ -26,6 +28,8 @@
                         id=`blue-${keyCool}`
                     )
                     label.add-score__team-label(for=`blue-${keyCool}`) Blue
+            .add-score__button-wrapper
+                button.add-score__button Add score
 script.
     const inputRadioList = [...document.querySelectorAll('input[type="radio"]')]
     inputRadioList.map((inputRadio, key) => {
@@ -50,4 +54,17 @@ script.
             const target = `${targetFirst}-${targetSecond}`;
             document.getElementById(target).checked = true;
         });
+    })
+
+    // select the hit me button
+    const hitMeButton = document.querySelector('.add-score__button');
+    hitMeButton.addEventListener('click', e => {
+        // stop the form from submitting
+        e.preventDefault();
+        //- check if a team has been selected
+        if(inputRadioList.filter(inputRadio => inputRadio.checked).length) {
+            console.log('it has been selected');
+        } else {
+            alert(`Select a team please`);
+        }
     })

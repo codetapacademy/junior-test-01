@@ -3,7 +3,8 @@
 }
 .add-score__team-label,
 .add-score__score,
-.add-score__name {
+.add-score__name,
+.add-score__button {
     border-radius: 15px;
     padding: 1rem;
     font-size: 1rem;
@@ -11,8 +12,40 @@
     border: 5px solid $mercury-color;
     outline: none;
 }
+.add-score__button-wrapper {
+    text-align: center;
+}
+.add-score__name-wrapper {
+    position: relative;
+}
+.add-score__tiny-label {
+    position: absolute;
+    font-size: 0.6rem;
+    top: 0.9rem;
+    left: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $white-color;
+    transition: 0.15s;
+}
+.add-score__button {
+    background: 
+        linear-gradient(
+            $robin-s-egg-blue-color, 
+            $feijoa-color
+        );
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    border: 0;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 .add-score__name:focus {
     border: 5px solid $cerulean-color;
+
+    & + .add-score__tiny-label {
+        color: $black-color;
+    }
 }
 .add-score__score {
     // trick the select to aling text on the right
