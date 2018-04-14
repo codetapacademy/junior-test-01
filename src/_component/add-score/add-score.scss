@@ -1,9 +1,38 @@
 #add-score {
     font-size: 3rem;
 }
-.add-score__team-label {
+.add-score__team-label,
+.add-score__score,
+.add-score__name {
     border-radius: 15px;
-    padding: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: $white-color;
+    border: 5px solid $mercury-color;
+    outline: none;
+}
+.add-score__name:focus {
+    border: 5px solid $cerulean-color;
+}
+.add-score__score {
+    // trick the select to aling text on the right
+    direction: rtl;
+
+    // hide the damned dropdown arrow
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    padding: 1rem 1.7rem;
+}
+.add-score__wrapper {
+    position: relative;
+    .jt-circle-down {
+        position: absolute;
+        top: calc(50% + 0.2rem);
+        font-size: 1rem;
+        right: 0.7rem;
+    }
 }
 input[type="radio"] {
     display: none;
