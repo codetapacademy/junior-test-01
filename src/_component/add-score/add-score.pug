@@ -87,11 +87,16 @@ script.
         console.log(scoreList);
         console.clear();
         // populate the leader board
-        scoreList
+        const firstThree = scoreList
             .sort((a, b) => b.value - a.value)
-            .slice(0, 3)
-            .map(score => {
-                console.log(score)
+            .slice(0, 3);
+        [...document.querySelectorAll('.board-list__item')]
+            .map((boardItem, key) => {
+                //- console.log( boardItem.querySelector('.name'))
+                const name = firstThree[key] ? firstThree[key].name : '';
+                const score = firstThree[key] ? firstThree[key].value : 0;
+                boardItem.querySelector('.name').innerHTML = name;
+                boardItem.querySelector('.score').innerHTML = score;
             })
     }
 
